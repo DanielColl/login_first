@@ -39,9 +39,15 @@ app.use(session({
 const connection = require('./db/db');
 
 
-
 //9 establecer rutas de la app
 app.get('/',(req,res)=>{
-    res.send('index');
+    res.render('index.ejs', {mensaje:'Un mensaje Cualquiera'});
 }); 
 
+app.get('/login',(req,res)=>{
+    res.render('login.ejs');
+}); 
+
+app.get('/register',(req,res)=>{
+    res.render('register.ejs');
+}); 
